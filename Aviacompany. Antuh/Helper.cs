@@ -27,6 +27,7 @@ namespace Aviacompany.Antuh.Model
             s_entities.SaveChanges();
         }
 
+
         public static int GetLastIDclient()
         {
             int id = s_entities.Client.OrderByDescending(client => client.ID_Client).First().ID_Client;

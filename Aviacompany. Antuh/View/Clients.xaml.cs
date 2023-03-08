@@ -21,6 +21,7 @@ namespace Aviacompany.Antuh.View
     public partial class Clients : Window
     {
         Entities1 m = new Entities1();
+
         public Clients()
         {
             InitializeComponent();
@@ -50,10 +51,26 @@ namespace Aviacompany.Antuh.View
             f3.Show();
         }
 
+
         private void btn_deleteclient_Click(object sender, RoutedEventArgs e)
         {
-            int deletetoid = Convert.ToInt32(tb_deletetoid.Text);
-            
+            if (MessageBox.Show("Вы действительно хотите удалить клиента", "Уведомление", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                int num = Convert.ToInt32(tb_deletetoid.Text);
+                var dRow = m.Client.Where(w => w.ID_Client == num).FirstOrDefault();
+                var pRow = m.Passport.Where(w => w.ID_Passport == num).FirstOrDefault();
+                var vRow = m.Visa.Where(w => w.ID_Visa == num).FirstOrDefault();
+                m.Client.Remove(dRow);
+                m.Passport.Remove(pRow);
+                m.Visa.Remove(vRow);
+                m.SaveChanges();
+                var query = from client in m.Client select new { client.ID_Client, client.Surname, client.Name, client.Patronymic, client.ID_Discount };
+                var query1 = from passport in m.Passport select new { passport.ID_Passport, passport.Series, passport.Number };
+                var query2 = from visa in m.Visa select new { visa.ID_Visa, visa.Series, visa.Number };
+                dataGrid1.ItemsSource = query.ToList();
+                dataGridpassport.ItemsSource = query1.ToList();
+                dataGridvisa.ItemsSource = query2.ToList();
+            }
         }
     }
 }

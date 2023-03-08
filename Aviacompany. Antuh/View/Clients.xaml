@@ -11,6 +11,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <GroupBox Header="ID клиента" HorizontalAlignment="Left" Height="71" Margin="250,389,0,0" VerticalAlignment="Top" Width="77"/>
+
         <GroupBox Header="Данные скидки" Height="289" Margin="940,95,0,0" VerticalAlignment="Top" FontSize="16" HorizontalAlignment="Left" Width="225"/>
 
         <GroupBox Header="Данные паспорта" HorizontalAlignment="Left" Height="289" Margin="468,95,0,0" VerticalAlignment="Top" Width="227" FontSize="16"/>
@@ -28,9 +30,9 @@
             <DataGrid x:Name="dataGridvisa" Margin="712,126,298,-309" />
             <DataGrid x:Name="dataGriddiscount" Margin="955,126,70,-309" />
         </Grid>
-        <Button x:Name="btn_addclient" Content="Добавить клиента" HorizontalAlignment="Left" Margin="50,400,0,0" VerticalAlignment="Top" Width="146" Height="60" Background="#FF79B6E0" Foreground="White" Click="btn_addclient_Click"/>
-        <TextBox x:Name="tb_deletetoid" HorizontalAlignment="Left" Height="33" Margin="264,413,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.476,0.618"/>
-        <Button x:Name="btn_deleteclient" Content="Удалить по id" HorizontalAlignment="Left" Margin="317,400,0,0" VerticalAlignment="Top" Width="146" Height="60" Background="#FF79B6E0" Foreground="White" Click="btn_deleteclient_Click"/>
+        <Button x:Name="btn_addclient" Content="Добавить клиента" HorizontalAlignment="Left" Margin="50,400,0,0" VerticalAlignment="Top" Width="146" Height="60" Background="#FF79B6E0" Foreground="White" Click="btn_addclient_Click" FontSize="14"/>
+        <TextBox x:Name="tb_deletetoid" HorizontalAlignment="Left" Height="33" Margin="271,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.476,0.618" FontSize="16"/>
+        <Button x:Name="btn_deleteclient" Content="Удалить по id" HorizontalAlignment="Left" Margin="342,400,0,0" VerticalAlignment="Top" Width="146" Height="60" Background="#FF79B6E0" Foreground="White" Click="btn_deleteclient_Click" FontSize="14"/>
 
     </Grid>
 </Window>
