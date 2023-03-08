@@ -154,6 +154,9 @@
     <Compile Include="View\Meteorolog.xaml.cs">
       <DependentUpon>Meteorolog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RedactirovanieClient.xaml.cs">
+      <DependentUpon>RedactirovanieClient.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\AddClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,6 +182,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\Meteorolog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RedactirovanieClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

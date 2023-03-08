@@ -33,6 +33,8 @@
         <Button x:Name="btn_addclient" Content="Добавить клиента" HorizontalAlignment="Left" Margin="50,400,0,0" VerticalAlignment="Top" Width="146" Height="60" Background="#FF79B6E0" Foreground="White" Click="btn_addclient_Click" FontSize="14"/>
         <TextBox x:Name="tb_deletetoid" HorizontalAlignment="Left" Height="33" Margin="271,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="35" RenderTransformOrigin="0.476,0.618" FontSize="16"/>
         <Button x:Name="btn_deleteclient" Content="Удалить по id" HorizontalAlignment="Left" Margin="342,400,0,0" VerticalAlignment="Top" Width="146" Height="60" Background="#FF79B6E0" Foreground="White" Click="btn_deleteclient_Click" FontSize="14"/>
+        <Button x:Name="btn_redactclient" Content="Изменить данные" HorizontalAlignment="Left" Margin="540,400,0,0" VerticalAlignment="Top" Width="146" Height="60" Background="#FF79B6E0" Foreground="White" Click="btn_redactclient_Click" FontSize="14"/>
+        <Button x:Name="btn_obnovit" Content="Обновить данные" HorizontalAlignment="Left" Margin="742,400,0,0" VerticalAlignment="Top" Width="146" Height="60" Background="#FF79B6E0" Foreground="White" Click="btn_obnovit_Click" FontSize="14"/>
 
     </Grid>
 </Window>
