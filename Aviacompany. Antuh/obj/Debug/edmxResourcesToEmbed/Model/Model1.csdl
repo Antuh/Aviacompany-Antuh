@@ -1,0 +1,560 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AviacompanyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Aircraft">
+    <Key>
+      <PropertyRef Name="ID_Aircraft" />
+    </Key>
+    <Property Name="ID_Aircraft" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Capacity" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_Hangar" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Hangar" Relationship="Self.FK_Aircraft_Hangar" FromRole="Aircraft" ToRole="Hangar" />
+    <NavigationProperty Name="Flight" Relationship="Self.FK_Flight_Aircraft" FromRole="Aircraft" ToRole="Flight" />
+  </EntityType>
+  <EntityType Name="ArrivalPoint">
+    <Key>
+      <PropertyRef Name="ID_ArrivalPoint" />
+    </Key>
+    <Property Name="ID_ArrivalPoint" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Flight" Relationship="Self.FK_Flight_ArrivalPoint" FromRole="ArrivalPoint" ToRole="Flight" />
+  </EntityType>
+  <EntityType Name="Authorization">
+    <Key>
+      <PropertyRef Name="ID_Authorization" />
+    </Key>
+    <Property Name="ID_Authorization" Type="Int32" Nullable="false" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_Authorization_Staff" FromRole="Authorization" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Baggage">
+    <Key>
+      <PropertyRef Name="ID_Baggage" />
+    </Key>
+    <Property Name="ID_Baggage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_Client" Type="Int32" Nullable="false" />
+    <Property Name="ID_TypeBaggage" Type="Int32" Nullable="false" />
+    <Property Name="Weight" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Baggage_Client" FromRole="Baggage" ToRole="Client" />
+    <NavigationProperty Name="TypeBaggage" Relationship="Self.FK_Baggage_TypeBaggage" FromRole="Baggage" ToRole="TypeBaggage" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ID_Client" />
+    </Key>
+    <Property Name="ID_Client" Type="Int32" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_Discount" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Baggage" Relationship="Self.FK_Baggage_Client" FromRole="Client" ToRole="Baggage" />
+    <NavigationProperty Name="Discount" Relationship="Self.FK_Client_Discount" FromRole="Client" ToRole="Discount" />
+    <NavigationProperty Name="Passport" Relationship="Self.FK_Passport_Client" FromRole="Client" ToRole="Passport" />
+    <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Client" FromRole="Client" ToRole="Ticket" />
+    <NavigationProperty Name="Visa" Relationship="Self.FK_Visa_Client" FromRole="Client" ToRole="Visa" />
+  </EntityType>
+  <EntityType Name="DeparturePoint">
+    <Key>
+      <PropertyRef Name="ID_DeparturePoint" />
+    </Key>
+    <Property Name="ID_DeparturePoint" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Flight" Relationship="Self.FK_Flight_DeparturePoint" FromRole="DeparturePoint" ToRole="Flight" />
+  </EntityType>
+  <EntityType Name="Discount">
+    <Key>
+      <PropertyRef Name="ID_Discount" />
+    </Key>
+    <Property Name="ID_Discount" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Client_Discount" FromRole="Discount" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="Flight">
+    <Key>
+      <PropertyRef Name="ID_Flight" />
+    </Key>
+    <Property Name="ID_Flight" Type="Int32" Nullable="false" />
+    <Property Name="DepartureTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ArrivalTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_Team" Type="Int32" Nullable="false" />
+    <Property Name="ID_Aircraft" Type="Int32" Nullable="false" />
+    <Property Name="ID_Meteorology" Type="Int32" Nullable="false" />
+    <Property Name="ID_DeparturePoint" Type="Int32" />
+    <Property Name="ID_ArrivalPoint" Type="Int32" />
+    <Property Name="Distance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Permission" Type="Boolean" Nullable="false" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Aircraft" Relationship="Self.FK_Flight_Aircraft" FromRole="Flight" ToRole="Aircraft" />
+    <NavigationProperty Name="ArrivalPoint" Relationship="Self.FK_Flight_ArrivalPoint" FromRole="Flight" ToRole="ArrivalPoint" />
+    <NavigationProperty Name="DeparturePoint" Relationship="Self.FK_Flight_DeparturePoint" FromRole="Flight" ToRole="DeparturePoint" />
+    <NavigationProperty Name="Meteorology" Relationship="Self.FK_Flight_Meteorology" FromRole="Flight" ToRole="Meteorology" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_Flight_Team" FromRole="Flight" ToRole="Team" />
+    <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_Flight" FromRole="Flight" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Hangar">
+    <Key>
+      <PropertyRef Name="ID_Hangar" />
+    </Key>
+    <Property Name="ID_Hangar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Aircraft" Relationship="Self.FK_Aircraft_Hangar" FromRole="Hangar" ToRole="Aircraft" />
+  </EntityType>
+  <EntityType Name="Income">
+    <Key>
+      <PropertyRef Name="ID_Income" />
+    </Key>
+    <Property Name="ID_Income" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Ticket" Type="Int32" Nullable="false" />
+    <Property Name="GeneralIncome" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Ticket" Relationship="Self.FK_Income_Ticket" FromRole="Income" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Meteorology">
+    <Key>
+      <PropertyRef Name="ID_Meteorology" />
+    </Key>
+    <Property Name="ID_Meteorology" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_Season" Type="Int32" Nullable="false" />
+    <Property Name="WindSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Flight" Relationship="Self.FK_Flight_Meteorology" FromRole="Meteorology" ToRole="Flight" />
+    <NavigationProperty Name="Season" Relationship="Self.FK_Meteorology_Season" FromRole="Meteorology" ToRole="Season" />
+  </EntityType>
+  <EntityType Name="Passport">
+    <Key>
+      <PropertyRef Name="ID_Passport" />
+    </Key>
+    <Property Name="ID_Passport" Type="Int32" Nullable="false" />
+    <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Passport_Client" FromRole="Passport" ToRole="Client" />
+  </EntityType>
+  <EntityType Name="Post">
+    <Key>
+      <PropertyRef Name="ID_Post" />
+    </Key>
+    <Property Name="ID_Post" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_Staff_Post" FromRole="Post" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Season">
+    <Key>
+      <PropertyRef Name="ID_Season" />
+    </Key>
+    <Property Name="ID_Season" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Meteorology" Relationship="Self.FK_Meteorology_Season" FromRole="Season" ToRole="Meteorology" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="ID_Staff" />
+    </Key>
+    <Property Name="ID_Staff" Type="Int32" Nullable="false" />
+    <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_Post" Type="Int32" Nullable="false" />
+    <Property Name="ID_Team" Type="Int32" />
+    <NavigationProperty Name="Authorization" Relationship="Self.FK_Authorization_Staff" FromRole="Staff" ToRole="Authorization" />
+    <NavigationProperty Name="Post" Relationship="Self.FK_Staff_Post" FromRole="Staff" ToRole="Post" />
+    <NavigationProperty Name="Team" Relationship="Self.FK_Staff_Team" FromRole="Staff" ToRole="Team" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Team">
+    <Key>
+      <PropertyRef Name="ID_Team" />
+    </Key>
+    <Property Name="ID_Team" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Time_Interval" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Flight" Relationship="Self.FK_Flight_Team" FromRole="Team" ToRole="Flight" />
+    <NavigationProperty Name="Staff" Relationship="Self.FK_Staff_Team" FromRole="Team" ToRole="Staff" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="ID_Ticket" />
+    </Key>
+    <Property Name="ID_Ticket" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Client" Type="Int32" Nullable="false" />
+    <Property Name="ID_Flight" Type="Int32" Nullable="false" />
+    <Property Name="Place" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ID_TypePlace" Type="Int32" Nullable="false" />
+    <Property Name="GeneralCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Ticket_Client" FromRole="Ticket" ToRole="Client" />
+    <NavigationProperty Name="Flight" Relationship="Self.FK_Ticket_Flight" FromRole="Ticket" ToRole="Flight" />
+    <NavigationProperty Name="Income" Relationship="Self.FK_Income_Ticket" FromRole="Ticket" ToRole="Income" />
+    <NavigationProperty Name="TypePlace" Relationship="Self.FK_Ticket_TypePlace" FromRole="Ticket" ToRole="TypePlace" />
+  </EntityType>
+  <EntityType Name="TypeBaggage">
+    <Key>
+      <PropertyRef Name="ID_TypeBaggage" />
+    </Key>
+    <Property Name="ID_TypeBaggage" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Baggage" Relationship="Self.FK_Baggage_TypeBaggage" FromRole="TypeBaggage" ToRole="Baggage" />
+  </EntityType>
+  <EntityType Name="TypePlace">
+    <Key>
+      <PropertyRef Name="ID_TypePlace" />
+    </Key>
+    <Property Name="ID_TypePlace" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Cost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Ticket" Relationship="Self.FK_Ticket_TypePlace" FromRole="TypePlace" ToRole="Ticket" />
+  </EntityType>
+  <EntityType Name="Visa">
+    <Key>
+      <PropertyRef Name="ID_Visa" />
+    </Key>
+    <Property Name="ID_Visa" Type="Int32" Nullable="false" />
+    <Property Name="Series" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Client" Relationship="Self.FK_Visa_Client" FromRole="Visa" ToRole="Client" />
+  </EntityType>
+  <Association Name="FK_Aircraft_Hangar">
+    <End Role="Hangar" Type="Self.Hangar" Multiplicity="1" />
+    <End Role="Aircraft" Type="Self.Aircraft" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hangar">
+        <PropertyRef Name="ID_Hangar" />
+      </Principal>
+      <Dependent Role="Aircraft">
+        <PropertyRef Name="ID_Hangar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Flight_Aircraft">
+    <End Role="Aircraft" Type="Self.Aircraft" Multiplicity="1" />
+    <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aircraft">
+        <PropertyRef Name="ID_Aircraft" />
+      </Principal>
+      <Dependent Role="Flight">
+        <PropertyRef Name="ID_Aircraft" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Flight_ArrivalPoint">
+    <End Role="ArrivalPoint" Type="Self.ArrivalPoint" Multiplicity="0..1" />
+    <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ArrivalPoint">
+        <PropertyRef Name="ID_ArrivalPoint" />
+      </Principal>
+      <Dependent Role="Flight">
+        <PropertyRef Name="ID_ArrivalPoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Authorization_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="Authorization" Type="Self.Authorization" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID_Staff" />
+      </Principal>
+      <Dependent Role="Authorization">
+        <PropertyRef Name="ID_Authorization" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Baggage_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Baggage" Type="Self.Baggage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID_Client" />
+      </Principal>
+      <Dependent Role="Baggage">
+        <PropertyRef Name="ID_Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Baggage_TypeBaggage">
+    <End Role="TypeBaggage" Type="Self.TypeBaggage" Multiplicity="1" />
+    <End Role="Baggage" Type="Self.Baggage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeBaggage">
+        <PropertyRef Name="ID_TypeBaggage" />
+      </Principal>
+      <Dependent Role="Baggage">
+        <PropertyRef Name="ID_TypeBaggage" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Client_Discount">
+    <End Role="Discount" Type="Self.Discount" Multiplicity="1" />
+    <End Role="Client" Type="Self.Client" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Discount">
+        <PropertyRef Name="ID_Discount" />
+      </Principal>
+      <Dependent Role="Client">
+        <PropertyRef Name="ID_Discount" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Passport_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Passport" Type="Self.Passport" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID_Client" />
+      </Principal>
+      <Dependent Role="Passport">
+        <PropertyRef Name="ID_Passport" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ticket_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID_Client" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="ID_Client" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visa_Client">
+    <End Role="Client" Type="Self.Client" Multiplicity="1" />
+    <End Role="Visa" Type="Self.Visa" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ID_Client" />
+      </Principal>
+      <Dependent Role="Visa">
+        <PropertyRef Name="ID_Visa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Flight_DeparturePoint">
+    <End Role="DeparturePoint" Type="Self.DeparturePoint" Multiplicity="0..1" />
+    <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DeparturePoint">
+        <PropertyRef Name="ID_DeparturePoint" />
+      </Principal>
+      <Dependent Role="Flight">
+        <PropertyRef Name="ID_DeparturePoint" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Flight_Meteorology">
+    <End Role="Meteorology" Type="Self.Meteorology" Multiplicity="1" />
+    <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Meteorology">
+        <PropertyRef Name="ID_Meteorology" />
+      </Principal>
+      <Dependent Role="Flight">
+        <PropertyRef Name="ID_Meteorology" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Flight_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="1" />
+    <End Role="Flight" Type="Self.Flight" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID_Team" />
+      </Principal>
+      <Dependent Role="Flight">
+        <PropertyRef Name="ID_Team" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ticket_Flight">
+    <End Role="Flight" Type="Self.Flight" Multiplicity="1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Flight">
+        <PropertyRef Name="ID_Flight" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="ID_Flight" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Income_Ticket">
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="1" />
+    <End Role="Income" Type="Self.Income" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ticket">
+        <PropertyRef Name="ID_Ticket" />
+      </Principal>
+      <Dependent Role="Income">
+        <PropertyRef Name="ID_Ticket" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Meteorology_Season">
+    <End Role="Season" Type="Self.Season" Multiplicity="1" />
+    <End Role="Meteorology" Type="Self.Meteorology" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Season">
+        <PropertyRef Name="ID_Season" />
+      </Principal>
+      <Dependent Role="Meteorology">
+        <PropertyRef Name="ID_Season" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Post">
+    <End Role="Post" Type="Self.Post" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Post">
+        <PropertyRef Name="ID_Post" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="ID_Post" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Team">
+    <End Role="Team" Type="Self.Team" Multiplicity="0..1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Team">
+        <PropertyRef Name="ID_Team" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="ID_Team" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Ticket_TypePlace">
+    <End Role="TypePlace" Type="Self.TypePlace" Multiplicity="1" />
+    <End Role="Ticket" Type="Self.Ticket" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypePlace">
+        <PropertyRef Name="ID_TypePlace" />
+      </Principal>
+      <Dependent Role="Ticket">
+        <PropertyRef Name="ID_TypePlace" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Aircraft" EntityType="Self.Aircraft" />
+    <EntitySet Name="ArrivalPoint" EntityType="Self.ArrivalPoint" />
+    <EntitySet Name="Authorization" EntityType="Self.Authorization" />
+    <EntitySet Name="Baggage" EntityType="Self.Baggage" />
+    <EntitySet Name="Client" EntityType="Self.Client" />
+    <EntitySet Name="DeparturePoint" EntityType="Self.DeparturePoint" />
+    <EntitySet Name="Discount" EntityType="Self.Discount" />
+    <EntitySet Name="Flight" EntityType="Self.Flight" />
+    <EntitySet Name="Hangar" EntityType="Self.Hangar" />
+    <EntitySet Name="Income" EntityType="Self.Income" />
+    <EntitySet Name="Meteorology" EntityType="Self.Meteorology" />
+    <EntitySet Name="Passport" EntityType="Self.Passport" />
+    <EntitySet Name="Post" EntityType="Self.Post" />
+    <EntitySet Name="Season" EntityType="Self.Season" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Team" EntityType="Self.Team" />
+    <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+    <EntitySet Name="TypeBaggage" EntityType="Self.TypeBaggage" />
+    <EntitySet Name="TypePlace" EntityType="Self.TypePlace" />
+    <EntitySet Name="Visa" EntityType="Self.Visa" />
+    <AssociationSet Name="FK_Aircraft_Hangar" Association="Self.FK_Aircraft_Hangar">
+      <End Role="Hangar" EntitySet="Hangar" />
+      <End Role="Aircraft" EntitySet="Aircraft" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flight_Aircraft" Association="Self.FK_Flight_Aircraft">
+      <End Role="Aircraft" EntitySet="Aircraft" />
+      <End Role="Flight" EntitySet="Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flight_ArrivalPoint" Association="Self.FK_Flight_ArrivalPoint">
+      <End Role="ArrivalPoint" EntitySet="ArrivalPoint" />
+      <End Role="Flight" EntitySet="Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Authorization_Staff" Association="Self.FK_Authorization_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Authorization" EntitySet="Authorization" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Baggage_Client" Association="Self.FK_Baggage_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Baggage" EntitySet="Baggage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Baggage_TypeBaggage" Association="Self.FK_Baggage_TypeBaggage">
+      <End Role="TypeBaggage" EntitySet="TypeBaggage" />
+      <End Role="Baggage" EntitySet="Baggage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Client_Discount" Association="Self.FK_Client_Discount">
+      <End Role="Discount" EntitySet="Discount" />
+      <End Role="Client" EntitySet="Client" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Passport_Client" Association="Self.FK_Passport_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Passport" EntitySet="Passport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_Client" Association="Self.FK_Ticket_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visa_Client" Association="Self.FK_Visa_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Visa" EntitySet="Visa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flight_DeparturePoint" Association="Self.FK_Flight_DeparturePoint">
+      <End Role="DeparturePoint" EntitySet="DeparturePoint" />
+      <End Role="Flight" EntitySet="Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flight_Meteorology" Association="Self.FK_Flight_Meteorology">
+      <End Role="Meteorology" EntitySet="Meteorology" />
+      <End Role="Flight" EntitySet="Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Flight_Team" Association="Self.FK_Flight_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Flight" EntitySet="Flight" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_Flight" Association="Self.FK_Ticket_Flight">
+      <End Role="Flight" EntitySet="Flight" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Income_Ticket" Association="Self.FK_Income_Ticket">
+      <End Role="Ticket" EntitySet="Ticket" />
+      <End Role="Income" EntitySet="Income" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Meteorology_Season" Association="Self.FK_Meteorology_Season">
+      <End Role="Season" EntitySet="Season" />
+      <End Role="Meteorology" EntitySet="Meteorology" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Post" Association="Self.FK_Staff_Post">
+      <End Role="Post" EntitySet="Post" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Team" Association="Self.FK_Staff_Team">
+      <End Role="Team" EntitySet="Team" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Ticket_TypePlace" Association="Self.FK_Ticket_TypePlace">
+      <End Role="TypePlace" EntitySet="TypePlace" />
+      <End Role="Ticket" EntitySet="Ticket" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,41 @@
+﻿<Window x:Class="Aviacompany.Antuh.View.AddClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aviacompany.Antuh.View"
+        mc:Ignorable="d"
+        Title="AddClient" Height="505" Width="800">
+    <Grid>
+        <GroupBox Header="Клиент" HorizontalAlignment="Left" Height="311" Margin="10,76,0,0" VerticalAlignment="Top" Width="210" FontSize="14"/>
+        <GroupBox Header="Скидка" HorizontalAlignment="Left" Height="70" Margin="26,303,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.58,0.16" FontSize="14"/>
+
+        <GroupBox Header="Отчество" HorizontalAlignment="Left" Height="70" Margin="26,233,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.58,0.16" FontSize="14"/>
+
+        <GroupBox Header="Фамилия" HorizontalAlignment="Left" Height="70" Margin="26,163,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.58,0.16" FontSize="14"/>
+
+        <GroupBox Header="Имя" HorizontalAlignment="Left" Height="70" Margin="26,97,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.58,0.16" FontSize="14"/>
+
+        <Grid HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="792" Background="#FF79B6E0">
+            <Label Content="Авиакомпания" HorizontalAlignment="Left" Height="38" Margin="22,10,0,0" VerticalAlignment="Top" Width="170" Foreground="White" FontSize="20" FontWeight="Bold"/>
+            <Image HorizontalAlignment="Left" Height="20" Margin="181,22,0,0" VerticalAlignment="Top" Width="33" Source="/Aviacompany.Antuh;component/Resource/free-icon-planes-1170857.png"/>
+            <Button x:Name="btn_exit" Content="Выход" HorizontalAlignment="Left" Margin="683,17,0,0" VerticalAlignment="Top" Width="84" Height="30" Background="White" Click="btn_exit_Click"/>
+        </Grid>
+        <TextBox x:Name="tb_name" HorizontalAlignment="Left" Height="27" Margin="41,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="14"/>
+        <TextBox x:Name="tb_surname" HorizontalAlignment="Left" Height="27" Margin="41,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="14"/>
+        <TextBox x:Name="tb_patronymic" HorizontalAlignment="Left" Height="27" Margin="41,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="14"/>
+        <TextBox x:Name="tb_discount" HorizontalAlignment="Left" Height="27" Margin="41,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="14"/>
+        <Button x:Name="btn_Add" Content="Добавить" HorizontalAlignment="Left" Margin="56,401,0,0" VerticalAlignment="Top" Width="110" Height="47" Background="#FF79B6E0" Foreground="White" FontSize="14" Click="btn_Add_Click"/>
+        <GroupBox Header="Паспорт" HorizontalAlignment="Left" Height="179" Margin="265,76,0,0" VerticalAlignment="Top" Width="210" FontSize="14"/>
+        <GroupBox Header="Виза" HorizontalAlignment="Left" Height="179" Margin="529,76,0,0" VerticalAlignment="Top" Width="210" FontSize="14"/>
+        <TextBox x:Name="tb_seriapas" HorizontalAlignment="Left" Height="27" Margin="295,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="14"/>
+        <TextBox x:Name="tb_seriavis" HorizontalAlignment="Left" Height="27" Margin="563,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="14"/>
+        <TextBox x:Name="tb_nomerpasp" HorizontalAlignment="Left" Height="27" Margin="295,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="14"/>
+        <TextBox x:Name="tb_nomervisa" HorizontalAlignment="Left" Height="27" Margin="563,191,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" FontSize="14"/>
+        <GroupBox Header="Серия" HorizontalAlignment="Left" Height="70" Margin="279,97,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.58,0.16" FontSize="14"/>
+        <GroupBox Header="Серия" HorizontalAlignment="Left" Height="70" Margin="546,97,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.58,0.16" FontSize="14"/>
+        <GroupBox Header="Номер" HorizontalAlignment="Left" Height="70" Margin="279,163,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.58,0.16" FontSize="14"/>
+        <GroupBox Header="Номер" HorizontalAlignment="Left" Height="70" Margin="546,163,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.58,0.16" FontSize="14"/>
+
+    </Grid>
+</Window>

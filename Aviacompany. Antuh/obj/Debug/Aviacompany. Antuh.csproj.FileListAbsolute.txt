@@ -1,0 +1,30 @@
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\bin\Debug\Aviacompany.Antuh.exe.config
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\bin\Debug\Aviacompany.Antuh.exe
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\bin\Debug\Aviacompany.Antuh.pdb
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany. Antuh.csproj.AssemblyReference.cache
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\App.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany.Antuh_MarkupCompile.cache
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany.Antuh_MarkupCompile.lref
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany.Antuh.g.resources
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany.Antuh.Properties.Resources.resources
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany. Antuh.csproj.GenerateResource.cache
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany. Antuh.csproj.CoreCompileInputs.cache
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany.Antuh.exe
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany.Antuh.pdb
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\bin\Debug\EntityFramework.dll
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\bin\Debug\EntityFramework.SqlServer.dll
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\bin\Debug\EntityFramework.xml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\bin\Debug\EntityFramework.SqlServer.xml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\bin\Debug\ru\EntityFramework.resources.dll
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany.Antuh_Content.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\Aviacompany. Antuh.csproj.CopyComplete
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\MainWindow.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\AgentRegistr.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\Meteorolog.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\MainWindow.baml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\AgentRegistr.baml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\Meteorolog.baml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\AddClient.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\AddClient.baml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\Clients.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\Clients.baml

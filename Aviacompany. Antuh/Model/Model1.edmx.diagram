@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1e510f1ef6824a6686aa8a1223ee1f1b" Name="Diagram1">
+        <EntityTypeShape EntityType="AviacompanyModel.Aircraft" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.ArrivalPoint" Width="1.5" PointX="0.75" PointY="19" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Authorization" Width="1.5" PointX="8.25" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Baggage" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Client" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.DeparturePoint" Width="1.5" PointX="0.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Discount" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Flight" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Hangar" Width="1.5" PointX="1.5" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Income" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Meteorology" Width="1.5" PointX="0.75" PointY="23.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Passport" Width="1.5" PointX="5.25" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Post" Width="1.5" PointX="3.75" PointY="16.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Season" Width="1.5" PointX="1.5" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Staff" Width="1.5" PointX="6" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Team" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Ticket" Width="1.5" PointX="5.25" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.TypeBaggage" Width="1.5" PointX="3" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.TypePlace" Width="1.5" PointX="3" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="AviacompanyModel.Visa" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
+        <AssociationConnector Association="AviacompanyModel.FK_Aircraft_Hangar" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Flight_Aircraft" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Flight_ArrivalPoint" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Authorization_Staff" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Baggage_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Baggage_TypeBaggage" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Client_Discount" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Passport_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Ticket_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Visa_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Flight_DeparturePoint" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Flight_Meteorology" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Flight_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Ticket_Flight" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Income_Ticket" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Meteorology_Season" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Staff_Post" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Staff_Team" ManuallyRouted="false" />
+        <AssociationConnector Association="AviacompanyModel.FK_Ticket_TypePlace" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

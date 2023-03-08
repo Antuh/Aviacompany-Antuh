@@ -1,0 +1,23 @@
+﻿<Window x:Class="Aviacompany.Antuh.View.AgentRegistr"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Aviacompany.Antuh.View"
+        mc:Ignorable="d"
+        Title="AgentRegistr" Height="450" Width="800">
+    <Grid>
+        <GroupBox Header="Работа с данными" HorizontalAlignment="Left" Height="139" Margin="84,242,0,0" VerticalAlignment="Top" Width="613" FontSize="18"/>
+
+        <Button x:Name="btn_client" Content="Работа с данными &#xA;        клиентов" HorizontalAlignment="Left" Margin="119,283,0,0" VerticalAlignment="Top" Width="150" Height="67" Click="btn_client_Click" Background="#FF79B6E0" Foreground="#FFFBFBFB" FontSize="14"/>
+        <Grid HorizontalAlignment="Left" Height="62" VerticalAlignment="Top" Width="792" Background="#FF79B6E0">
+            <Label Content="Авиакомпания" HorizontalAlignment="Left" Height="38" Margin="22,10,0,0" VerticalAlignment="Top" Width="170" Foreground="White" FontSize="20" FontWeight="Bold"/>
+            <Image HorizontalAlignment="Left" Height="20" Margin="181,22,0,0" VerticalAlignment="Top" Width="33" Source="/Aviacompany.Antuh;component/Resource/free-icon-planes-1170857.png"/>
+            <Button x:Name="btn_exit" Content="Выход" HorizontalAlignment="Left" Margin="683,17,0,0" VerticalAlignment="Top" Width="84" Height="30" Background="White" Click="btn_exit_Click"/>
+        </Grid>
+        <Label Content="Здравствуйте, агент по регистрации" HorizontalAlignment="Left" Margin="219,78,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Button x:Name="btn_baggage" Content="Работа с данными &#xA;          багажа" HorizontalAlignment="Left" Margin="315,283,0,0" VerticalAlignment="Top" Width="150" Height="67" Click="btn_baggage_Click" Background="#FF79B6E0" Foreground="#FFFBFBFB" FontSize="14"/>
+        <Button x:Name="btn_ticket" Content="Работа с данными &#xA;         билетов" HorizontalAlignment="Left" Margin="514,283,0,0" VerticalAlignment="Top" Width="150" Height="67" Click="btn_ticket_Click" Background="#FF79B6E0" Foreground="#FFFBFBFB" FontSize="14"/>
+
+    </Grid>
+</Window>
