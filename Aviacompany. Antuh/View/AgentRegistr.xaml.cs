@@ -47,7 +47,9 @@ namespace Aviacompany.Antuh.View
 
         private void btn_ticket_Click(object sender, RoutedEventArgs e)
         {
-
+            TicketsClient f3 = new TicketsClient();
+            f3.Show();
+            this.Close();
         }
     }
 }

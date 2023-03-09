@@ -41,11 +41,11 @@ namespace Aviacompany.Antuh
                 int idpost = user.Staff.ID_Post;
                 switch (idpost)
                 {
-                    /*case 1:
-                        Window1 f = new Window1();
+                    case 6:
+                        ProsmotrDataClient f = new ProsmotrDataClient();
                         f.Show();
                         break;
-                    case 2:
+                    /*case 2:
                         Window2 f2 = new Window2();
                         f2.Show();
                         break;*/

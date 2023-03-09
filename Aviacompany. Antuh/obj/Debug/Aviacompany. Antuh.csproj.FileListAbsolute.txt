@@ -36,3 +36,11 @@ D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View
 D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\AddBaggage.baml
 D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\RedactirovanieBaggage.g.cs
 D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\RedactirovanieBaggage.baml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\TicketsClient.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\TicketsClient.baml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\AddTicket.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\AddTicket.baml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\RedactirovanieTicket.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\RedactirovanieTicket.baml
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\ProsmotrDataClient.g.cs
+D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\obj\Debug\View\ProsmotrDataClient.baml

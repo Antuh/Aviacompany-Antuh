@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aviacompany.Antuh.View"
         mc:Ignorable="d"
-        Title="AddClient" Height="505" Width="800">
+        Title="RedactClient" Height="505" Width="800">
     <Grid>
         <GroupBox Header="Клиент" HorizontalAlignment="Left" Height="311" Margin="10,76,0,0" VerticalAlignment="Top" Width="210" FontSize="14"/>
         <GroupBox Header="Скидка" HorizontalAlignment="Left" Height="70" Margin="26,303,0,0" VerticalAlignment="Top" Width="182" RenderTransformOrigin="0.58,0.16" FontSize="14"/>

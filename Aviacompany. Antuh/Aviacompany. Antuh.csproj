@@ -148,6 +148,9 @@
     <Compile Include="View\AddClient.xaml.cs">
       <DependentUpon>AddClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AddTicket.xaml.cs">
+      <DependentUpon>AddTicket.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AgentRegistr.xaml.cs">
       <DependentUpon>AgentRegistr.xaml</DependentUpon>
     </Compile>
@@ -160,17 +163,30 @@
     <Compile Include="View\Meteorolog.xaml.cs">
       <DependentUpon>Meteorolog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ProsmotrDataClient.xaml.cs">
+      <DependentUpon>ProsmotrDataClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RedactirovanieBaggage.xaml.cs">
       <DependentUpon>RedactirovanieBaggage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RedactirovanieClient.xaml.cs">
       <DependentUpon>RedactirovanieClient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RedactirovanieTicket.xaml.cs">
+      <DependentUpon>RedactirovanieTicket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\TicketsClient.xaml.cs">
+      <DependentUpon>TicketsClient.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\AddBaggage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AddClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AddTicket.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -202,11 +218,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ProsmotrDataClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\RedactirovanieBaggage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RedactirovanieClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RedactirovanieTicket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\TicketsClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

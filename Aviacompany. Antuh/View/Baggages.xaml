@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aviacompany.Antuh.View"
         mc:Ignorable="d"
-        Title="Client" Height="519.664" Width="1200.476"
+        Title="Baggage" Height="519.664" Width="1200.476"
         Loaded="Baggage_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>

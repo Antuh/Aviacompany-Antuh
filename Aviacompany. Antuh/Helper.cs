@@ -31,6 +31,11 @@ namespace Aviacompany.Antuh.Model
             s_entities.Baggage.Add(baggage);
             s_entities.SaveChanges();
         }
+        public static void CreateTicket(Model.Ticket ticket)
+        {
+            s_entities.Ticket.Add(ticket);
+            s_entities.SaveChanges();
+        }
 
 
         public static int GetLastIDclient()

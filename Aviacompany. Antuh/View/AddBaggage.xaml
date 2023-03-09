@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aviacompany.Antuh.View"
         mc:Ignorable="d"
-        Title="AddClient" Height="505" Width="800"
+        Title="AddBaggage" Height="505" Width="800"
         Loaded="AddBaggage_Loaded">
     <Grid>
         <GroupBox Header="Данные типа багажа" HorizontalAlignment="Left" Height="255" Margin="508,76,0,0" VerticalAlignment="Top" Width="272" FontSize="14"/>
