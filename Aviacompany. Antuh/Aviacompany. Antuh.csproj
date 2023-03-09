@@ -142,11 +142,17 @@
     <Compile Include="Model\Visa.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\AddBaggage.xaml.cs">
+      <DependentUpon>AddBaggage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\AddClient.xaml.cs">
       <DependentUpon>AddClient.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\AgentRegistr.xaml.cs">
       <DependentUpon>AgentRegistr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Baggages.xaml.cs">
+      <DependentUpon>Baggages.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\Clients.xaml.cs">
       <DependentUpon>Clients.xaml</DependentUpon>
@@ -154,14 +160,25 @@
     <Compile Include="View\Meteorolog.xaml.cs">
       <DependentUpon>Meteorolog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\RedactirovanieBaggage.xaml.cs">
+      <DependentUpon>RedactirovanieBaggage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\RedactirovanieClient.xaml.cs">
       <DependentUpon>RedactirovanieClient.xaml</DependentUpon>
     </Compile>
+    <Page Include="View\AddBaggage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\AddClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AgentRegistr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Baggages.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,6 +199,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\Meteorolog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\RedactirovanieBaggage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

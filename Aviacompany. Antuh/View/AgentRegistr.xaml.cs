@@ -40,7 +40,9 @@ namespace Aviacompany.Antuh.View
 
         private void btn_baggage_Click(object sender, RoutedEventArgs e)
         {
-
+            Baggages f3 = new Baggages();
+            f3.Show();
+            this.Close();
         }
 
         private void btn_ticket_Click(object sender, RoutedEventArgs e)

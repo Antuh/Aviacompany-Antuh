@@ -26,11 +26,21 @@ namespace Aviacompany.Antuh.Model
             s_entities.Visa.Add(visa);
             s_entities.SaveChanges();
         }
+        public static void CreateBaggage(Model.Baggage baggage)
+        {
+            s_entities.Baggage.Add(baggage);
+            s_entities.SaveChanges();
+        }
 
 
         public static int GetLastIDclient()
         {
             int id = s_entities.Client.OrderByDescending(client => client.ID_Client).First().ID_Client;
+            return id + 1;
+        }
+        public static int GetLastIDbaggage()
+        {
+            int id = s_entities.Baggage.OrderByDescending(baggage => baggage.ID_Baggage).First().ID_Baggage;
             return id + 1;
         }
 

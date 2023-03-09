@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\Programmirovanie\Program\Aviacompany. Antuh\Aviacompany. Antuh\App.xaml
-61248500905
+9-1610202524
 2-1556844510
-351380652235
+381732294558
 18-348923787
-View\AddClient.xaml;View\AgentRegistr.xaml;View\Clients.xaml;View\MainWindow.xaml;View\Meteorolog.xaml;View\RedactirovanieClient.xaml;
+View\AddBaggage.xaml;View\AddClient.xaml;View\AgentRegistr.xaml;View\Baggages.xaml;View\Clients.xaml;View\MainWindow.xaml;View\Meteorolog.xaml;View\RedactirovanieBaggage.xaml;View\RedactirovanieClient.xaml;
 
 False
 
